@@ -21,6 +21,15 @@ export const ListContacts = () => {
         <List>
             {visiableTodos.map(({ id, name, phoneNumber }) => (
                 <Item key={id}>
+                    <div>
+                        {' '}
+                        <Avatar
+                            src={generator.generateRandomAvatar(id)}
+                            alt=""
+                        />
+                        <Name>{name}</Name>
+                        <p>{phoneNumber}</p>
+                    </div>
                     <DeleteBtn
                         id={id}
                         onClick={e => {
@@ -29,9 +38,6 @@ export const ListContacts = () => {
                     >
                         <BiTrash />
                     </DeleteBtn>
-                    <Avatar src={generator.generateRandomAvatar(id)} alt="" />
-                    <Name>{name}</Name>
-                    <p>{phoneNumber}</p>
                 </Item>
             ))}
         </List>

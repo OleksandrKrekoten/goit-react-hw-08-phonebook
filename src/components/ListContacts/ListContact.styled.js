@@ -8,6 +8,12 @@ export const Item = styled.li`
     display: flex;
     text-align: center;
     align-items: center;
+    justify-content: space-between;
+    max-width: 500px;
+    div{display:flex}
+    :not(:last-child){
+        margin-bottom: 25px;
+    }
 `;
 export const Name = styled.p`
     font-weight: 700;
@@ -34,6 +40,6 @@ export const DeleteBtn = styled.button`
     }
 `;
 export const Avatar = styled.img`
-width: 30px;
+width: 60px;
 margin-right: 16px;
 `
