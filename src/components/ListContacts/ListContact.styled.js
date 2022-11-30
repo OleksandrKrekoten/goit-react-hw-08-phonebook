@@ -9,7 +9,7 @@ export const Item = styled.li`
     text-align: center;
     align-items: center;
     justify-content: space-between;
-    max-width: 500px;
+    max-width: 600px;
     div{display:flex}
     :not(:last-child){
         margin-bottom: 25px;

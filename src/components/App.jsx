@@ -1,42 +1,19 @@
-import { FormAddContacts } from './FormAddContacts/FormAddContacts';
-import { ListContacts } from './ListContacts/ListContacts';
-import { SearchForm } from './SearchForm/SearchForm';
-import { Section } from './Section/Section';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { selectIsLoading, selectError, selectContacts } from 'redux/selectors';
+import { Contacts } from 'pages/Contacts/ContactPage';
+import { Routes, Route } from 'react-router-dom';
 
-
-
+import { Layout } from './Layout/Layout';
+import { LoginForm } from './FormLogin/LoginForm';
+import { RegisterForm } from './FormRegister/RegisterForm';
 
 export function App() {
-    const dispatch = useDispatch();
-        const isLoading = useSelector(selectIsLoading);
-        const error = useSelector(selectError);
-
-    useEffect(() => {
-        dispatch(fetchContacts());
-    }, [dispatch]);
-    const contacts = useSelector(selectContacts);
     return (
         <div>
-            <Section title="Phonebook">
-                <FormAddContacts />
-                {isLoading && !error && <b>Request in progress...</b>}
-            </Section>
-            <Section title="Contacts">
-                {!!contacts.length ? (
-                    <>
-                        <SearchForm />
-
-                        <ListContacts />
-                    </>
-                ) : (
-                    <p>Add your first contact</p>
-                )}
-            </Section>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route path="/register" element={<RegisterForm />} />
+                    <Route path="/login" element={<LoginForm />} />
+                </Route>
+            </Routes>
         </div>
     );
 }

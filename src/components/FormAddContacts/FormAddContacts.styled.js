@@ -12,6 +12,7 @@ export const Form = styled(FormikForm)`
     border: 2px solid #0b0e24;
     div {
         position: absolute;
+        
         color: #c70039;
         font-size: 12px;
     }
@@ -34,6 +35,7 @@ export const Field = styled(FormikInput)`
     border: none;
     background-color: #8f96a3;
     color: #0b0e24;
+    margin-bottom: 8px;
     transition: outline 200ms ease-in;
     :hover,
     :focus {
