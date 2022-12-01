@@ -1,22 +1,16 @@
-import { NavLink, Link } from 'react-router-dom';
-import { AnimateCharcter, Header, NavList, NavItem } from './AppBar.styled';
-
+import { Navigation } from 'components/Navigation/Navigation';
+import {  Header} from './AppBar.styled';
+import { useAuth } from 'hooks/useAuth';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { AuthNav } from 'components/AuthNav/AuthNav';
 export const AppBar = () => {
+    const { isLoggedIn } = useAuth();
     return (
         <Header>
-            <Link to={'/'}>
-                <AnimateCharcter>phoneBook</AnimateCharcter>
-            </Link>
-            <nav>
-                <NavList>
-                    <NavItem>
-                        <NavLink to={'/register'}>register</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink to={'/login'}>login</NavLink>
-                    </NavItem>
-                </NavList>
-            </nav>
+            <Navigation/>
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}    
+            
+           
         </Header>
     );
 };

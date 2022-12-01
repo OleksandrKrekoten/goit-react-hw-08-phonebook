@@ -1,32 +1,30 @@
 import { Formik, ErrorMessage } from 'formik';
-import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
 import * as Yup from 'yup';
 import 'yup-phone';
 import { Form, Field, Button } from './FormAddContacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
-import { selectContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const initialValues = {
     name: '',
-    phoneNumber: '',
+    number: '',
 };
 export function FormAddContacts() {
     const dispatch = useDispatch();
     const contacts = useSelector(selectContacts);
     const validationSchema = Yup.object({
         name: Yup.string().required().max(40).trim(),
-        phoneNumber: Yup.string().phone('UA', true).required(),
+        number: Yup.string().phone('UA', true).required(),
     });
 
     const handleSubmit = (values, actions) => {
         setTimeout(() => actions.setSubmitting(false), 500);
-        const { name, phoneNumber } = values;
+        const { name, number } = values;
         const newContact = {
-            id: nanoid(),
-            name: name,
-            phoneNumber: phoneNumber,
+            name,
+            number,
         };
         contacts.find(
             contact =>
@@ -50,14 +48,14 @@ export function FormAddContacts() {
                     <Form>
                         <label>
                             <span>Name</span>
-                            <Field name="name" placeholder="your name" />
+                            <Field name="name"  />
                             <ErrorMessage name="name" component="div" />
                         </label>
                         <label>
                             <span>Phone Number</span>
                             <Field
-                                name="phoneNumber"
-                                placeholder="+38 0** *** ** **"
+                                name="number"
+                               
                             />
                             <ErrorMessage name="phoneNumber" component="div" />
                         </label>

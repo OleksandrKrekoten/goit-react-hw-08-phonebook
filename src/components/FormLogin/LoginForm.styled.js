@@ -1,23 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: aquamarine;
-    height: 83.9vh;
-    padding-top: 60px;
-  
-`;
-export const Wrraper = styled.div`
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 5px;
-    align-items: center;
-    padding: 40px;
-    
-`;
+
 
 
 export const Form = styled.form`
@@ -41,7 +24,7 @@ position:relative;`
 
 
 export const FormInput = styled.input`
-    margin: 25px 0px;
+    margin-bottom: 25px;
     height: 30px;
     width: 100%;
     padding-left: 15px;
@@ -62,7 +45,7 @@ export const FormLabel = styled.label`
     font-size: 20px;
     
 `;
-export const LoginBtn = styled.button`
+export const BtnForm = styled.button`
     display: block;
     height: 30px;
     width: 100%;
@@ -73,6 +56,11 @@ export const LoginBtn = styled.button`
     :focus {
         background-color: #700fdd;
         border: 1px solid grey;
-        color:  white;
+        color: white;
     }
+`;
+export const Text = styled.p`
+    font-family: 'Montserraf', sans-serif;
+    font-size: 16px;
+    color: gray;
 `;

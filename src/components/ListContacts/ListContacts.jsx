@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { List, Item, Name, DeleteBtn, Avatar } from './ListContact.styled';
-import { deleteContact } from 'redux/operations';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { deleteContact } from 'redux/contacts/operations';
+import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 import { AvatarGenerator } from 'random-avatar-generator';
 import { BiTrash } from 'react-icons/bi';
 
@@ -19,7 +19,7 @@ export const ListContacts = () => {
     const visiableTodos = getvisiableTodos();
     return (
         <List>
-            {visiableTodos.map(({ id, name, phoneNumber }) => (
+            {visiableTodos.map(({ id, name, number }) => (
                 <Item key={id}>
                     <div>
                         {' '}
@@ -28,7 +28,7 @@ export const ListContacts = () => {
                             alt=""
                         />
                         <Name>{name}</Name>
-                        <p>{phoneNumber}</p>
+                        <p>{number}</p>
                     </div>
                     <DeleteBtn
                         id={id}

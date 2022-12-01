@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { selectIsLoading, selectError } from 'redux/selectors';
+import { selectIsLoading, selectError } from 'redux/contacts/selectors';
 import { useSelector } from 'react-redux';
 import { Loader } from 'components/Loader/Loader';
 import { Wrapper, Title } from './Section.styled';

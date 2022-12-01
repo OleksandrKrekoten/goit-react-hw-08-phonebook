@@ -3,12 +3,12 @@ import { fetchContacts, addContact, deleteContact } from './operations';
 
 const handlePending = state => {
     state.isLoading = true;
-}
+};
 
 const handleRejected = (state, actions) => {
     state.isLoading = false;
     state.error = actions.payload;
-}
+};
 
 export const contactSlice = createSlice({
     name: 'contacts',
@@ -44,6 +44,3 @@ export const contactSlice = createSlice({
         [deleteContact.rejected]: handleRejected,
     },
 });
-
-
-
