@@ -18,28 +18,30 @@ export const ListContacts = () => {
     }
     const visiableTodos = getvisiableTodos();
     return (
-        <List>
-            {visiableTodos.map(({ id, name, number }) => (
-                <Item key={id}>
-                    <div>
-                        {' '}
-                        <Avatar
-                            src={generator.generateRandomAvatar(id)}
-                            alt=""
-                        />
-                        <Name>{name}</Name>
-                        <p>{number}</p>
-                    </div>
-                    <DeleteBtn
-                        id={id}
-                        onClick={e => {
-                            dispatch(deleteContact(id));
-                        }}
-                    >
-                        <BiTrash />
-                    </DeleteBtn>
-                </Item>
-            ))}
-        </List>
+        <div>
+            <List>
+                {visiableTodos.map(({ id, name, number }) => (
+                    <Item key={id}>
+                        <div>
+                            {' '}
+                            <Avatar
+                                src={generator.generateRandomAvatar(id)}
+                                alt=""
+                            />
+                            <Name>{name}</Name>
+                            <p>{number}</p>
+                        </div>
+                        <DeleteBtn
+                            id={id}
+                            onClick={e => {
+                                dispatch(deleteContact(id));
+                            }}
+                        >
+                            <BiTrash />
+                        </DeleteBtn>
+                    </Item>
+                ))}
+            </List>
+        </div>
     );
 };

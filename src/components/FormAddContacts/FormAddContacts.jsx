@@ -6,6 +6,7 @@ import { Form, Field, Button } from './FormAddContacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { MdGroupAdd } from 'react-icons/md';
 
 const initialValues = {
     name: '',
@@ -20,20 +21,17 @@ export function FormAddContacts() {
     });
 
     const handleSubmit = (values, actions) => {
-        setTimeout(() => actions.setSubmitting(false), 500);
+console.log(values);
         const { name, number } = values;
-        const newContact = {
-            name,
-            number,
-        };
+       
         contacts.find(
             contact =>
-                contact.name.toLowerCase() === newContact.name.toLowerCase()
+                contact.name.toLowerCase() === name.toLowerCase()
         )
             ? Notiflix.Notify.failure(
-                  `${newContact.name} is already in contacts.`
+                  `${name} is already in contacts.`
               )
-            : dispatch(addContact(newContact));
+            : dispatch(addContact({ name:name, number:number }));
 
         actions.resetForm();
     };
@@ -48,19 +46,16 @@ export function FormAddContacts() {
                     <Form>
                         <label>
                             <span>Name</span>
-                            <Field name="name"  />
+                            <Field name="name" />
                             <ErrorMessage name="name" component="div" />
                         </label>
                         <label>
                             <span>Phone Number</span>
-                            <Field
-                                name="number"
-                               
-                            />
-                            <ErrorMessage name="phoneNumber" component="div" />
+                            <Field name="number" />
+                            <ErrorMessage name="number" component="div" />
                         </label>
                         <Button type="submit" disabled={isSubmitting}>
-                            Add contact{' '}
+                            <span>Add contact</span> <MdGroupAdd />
                         </Button>
                     </Form>
                 );

@@ -1,14 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
-import { AnimateCharcter } from './Navigation.styled';
+import { AnimateCharcter, NavBtn, Nav } from './Navigation.styled';
+import { MdRecentActors } from 'react-icons/md';
 export const Navigation = () => {
     const { isLoggedIn } = useAuth()
     return (
-        <nav>
+        <Nav>
             <NavLink to="/">
                 <AnimateCharcter>phoneBook</AnimateCharcter>
-                {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
             </NavLink>
-        </nav>
+            {isLoggedIn && (
+                <NavBtn to="/contacts">
+                    <span>Contacts</span>
+                    <MdRecentActors/>
+                </NavBtn>
+            )}
+        </Nav>
     );
  }

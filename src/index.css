@@ -2,14 +2,19 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+   background: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.7),
+      rgba(47, 48, 58, 0.7)
+    ), url(./images/7822155.jpg);
   
 }
-
+button,a{
+  font-family: inherit;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

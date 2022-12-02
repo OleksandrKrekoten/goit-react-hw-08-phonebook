@@ -9,6 +9,7 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from '../hooks/useAuth';
 import { Contacts } from 'pages/Contacts/ContactPage';
+import { HomePage } from 'pages/HomePage/HomePage';
 export function App() {
     const dispatch = useDispatch();
     const { isRefreshing } = useAuth();
@@ -21,6 +22,7 @@ export function App() {
         <div>
             <Routes>
                 <Route path="/" element={<Layout />}>
+                    <Route index element={<HomePage/>} />
                     <Route
                         path="/register"
                         element={

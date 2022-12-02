@@ -2,60 +2,67 @@ import { Form as FormikForm, Field as FormikInput } from 'formik';
 import styled from '@emotion/styled';
 
 export const Form = styled(FormikForm)`
-    position: relative;
-    display: flex;
+height: max-content;
     width: 400px;
     flex-direction: column;
-    font-family: Courier New;
-    gap: 20px;
-    padding: 20px;
-    border: 2px solid #0b0e24;
-    div {
-        position: absolute;
-        
-        color: #c70039;
-        font-size: 12px;
-    }
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 40px;
     span {
         font-weight: 700;
         display: block;
         font-size: 14px;
         color: #0b0e24;
         cursor: pointer;
-        margin-bottom: 10px;
+    }
+    label {
+        position: relative;
+    }
+    div {
+        position: absolute;
+        top: 64px;
+        left: 10px;
+        color: #c70039;
+        font-size: 12px;
     }
 `;
 export const Field = styled(FormikInput)`
-    display: flex;
-    flex-direction: column;
-    font-family: Courier New;
-    height: 24px;
-    border-radius: 12px;
-    padding-left: 12px;
-    border: none;
-    background-color: #8f96a3;
-    color: #0b0e24;
-    margin-bottom: 8px;
-    transition: outline 200ms ease-in;
-    :hover,
+    margin: 10px 0px 25px 0px;
+    height: 30px;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 20px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    outline: none;
+    transition: 400ms;
+    transition: background-color 400ms, color 400ms;
+
     :focus {
-        outline: 2px solid #0e7807;
+        background-color: #3fb0ff;
+        color: #ffffff;
     }
 `;
 export const Button = styled.button`
-    display: block;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
     width: 150px;
-    padding: 4px 8px;
-    border-radius: 12px;
+    background-color: #ffffff;
     border: none;
-    background-color: #0b0e24;
-    color: white;
-    :disabled {
-        background-color: #8f96a3;
-        color: white;
-    }
+    border-radius: 5px;
+    transition: background-color 400ms, color 400ms;
+    border: 1px solid #3fb0ff;
     :hover,
     :focus {
-        outline: 2px solid #0e7807;
+        background-color: #3fb0ff;
+        color: #ffffff;
+        span {
+            color: #ffffff;
+        }
+    }
+    span {
+        margin-right: 10px;
+        transition:  color 400ms;
     }
 `;
