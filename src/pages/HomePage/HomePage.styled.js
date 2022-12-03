@@ -10,7 +10,7 @@ margin-right: auto;
 
 `
 export const HeroDiscription = styled.div`
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color:#ffffff;
     padding: 40px;
     border-radius: 5px;
 `;
