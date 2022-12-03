@@ -1,5 +1,30 @@
 import styled from '@emotion/styled';
+export const AnimateCharcter = styled.span`
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg,
+        #e43409 0%,
+        #e8e937 29%,
+        #b737e9 67%,
+        #b52782 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    margin-left: 10px;
+    @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+    }
+`
 export const Menu = styled.div`
     display: flex;
     align-items: center;
