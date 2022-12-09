@@ -16,12 +16,12 @@ export function FormAddContacts() {
     const dispatch = useDispatch();
     const contacts = useSelector(selectContacts);
     const validationSchema = Yup.object({
-        name: Yup.string().required().max(40).trim(),
+        name: Yup.string().required().max(10).trim(),
         number: Yup.string().phone('UA', true).required(),
     });
 
     const handleSubmit = (values, actions) => {
-console.log(values);
+
         const { name, number } = values;
        
         contacts.find(

@@ -17,7 +17,7 @@ export const Item = styled.li`
             width: 200px;
         }
         @media (min-width: 768px) {
-            width: 250px;
+            width: 350px;
         }
     }
     :not(:last-child) {
