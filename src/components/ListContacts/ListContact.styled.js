@@ -1,26 +1,54 @@
 import styled from '@emotion/styled';
 
-
-
 export const List = styled.ul`
     list-style: none;
-`
+    margin: 0;
+    padding: 0;
+    ;
+`;
 export const Item = styled.li`
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
-    max-width: 600px;
-    div{display:flex}
-    :not(:last-child){
+    div {
+        display: flex;
+        width: 150px;
+        @media (min-width: 400px) {
+            width: 200px;
+        }
+        @media (min-width: 768px) {
+            width: 250px;
+        }
+    }
+    :not(:last-child) {
         margin-bottom: 25px;
+    }
+`;
+export const Wrraper = styled.div`
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 400px) {
+        flex-direction: row;
     }
 `;
 export const Name = styled.p`
     font-weight: 700;
     margin-right: 16px;
-`;
+    font-size: 10px;
+    
+    @media (min-width: 780px) {
+        font-size:16px;
+        
+    }
 
+`;
+export const  PhoneNum = styled.p`
+font-size: 10px;
+@media (min-width: 780px) {
+        font-size: 16px;
+        
+    }
+`
 
 export const DeleteBtn = styled.button`
     display: flex;
@@ -32,7 +60,7 @@ export const DeleteBtn = styled.button`
     height: 30px;
     color: #0b0e24;
     background-color: transparent;
-    margin-right: 16px;
+    margin:0 16px;
     transition: background-color 200ms ease-in;
     :hover,
     :focus {
@@ -41,6 +69,10 @@ export const DeleteBtn = styled.button`
     }
 `;
 export const Avatar = styled.img`
-width: 60px;
-margin-right: 16px;
-`
+    width: 35px;
+    margin-right: 16px;
+    @media (min-width: 780px) {
+        width: 60px;
+        
+    }
+`;

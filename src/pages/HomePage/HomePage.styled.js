@@ -14,3 +14,10 @@ export const HeroDiscription = styled.div`
     padding: 40px;
     border-radius: 5px;
 `;
+
+export const Img = styled.img`
+    display: none;
+    @media (min-width: 780px) {
+        display: block;
+    }
+`;

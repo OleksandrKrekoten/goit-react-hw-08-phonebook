@@ -5,9 +5,9 @@ display: flex;
 align-items: center;
 `
 export const NavBtn = styled(NavLink)`
-display: flex;
-align-items: center;
-    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
     border: 1px solid #242c3b;
     background-color: #ffffff;
     color: #353f54;
@@ -18,7 +18,8 @@ align-items: center;
     :not(:last-child) {
         margin-right: 25px;
     }
-    span{
+    span {
+        display: none;
         margin-right: 10px;
     }
     :hover {
@@ -31,5 +32,12 @@ align-items: center;
         background-color: #3fb0ff;
         box-shadow: 0px 25px 126px -11px rgba(255, 255, 255, 0.86);
         box-shadow: inset 2px -1px 37px 7px rgba(0, 0, 0, 0.31);
+    }
+    @media (min-width: 780px) {
+        span {
+            padding: 10px 20px;
+            display: block;
+            margin-right: 10px;
+        }
     }
 `;

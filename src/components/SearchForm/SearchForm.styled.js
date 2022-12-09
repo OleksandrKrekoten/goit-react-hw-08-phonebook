@@ -1,11 +1,10 @@
 import styled from '@emotion/styled';
 
 export const Input = styled.input`
-
     display: block;
     margin: 10px 0px 25px 0px;
     height: 30px;
-    width: max-content;
+    width: 160px;
     padding-left: 15px;
     font-size: 20px;
     border: 1px solid silver;
@@ -14,11 +13,12 @@ export const Input = styled.input`
     transition: 400ms;
     transition: background-color 400ms, color 400ms;
     padding-left: 30px;
-
+    @media (min-width: 780px) {
+       width: max-content;
+    }
     :focus {
         background-color: #3fb0ff;
         color: #ffffff;
-        
     }
 `;
 export const Icon = styled.span`

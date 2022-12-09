@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const AuthBtn = styled(NavLink)`
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: 1px solid #242c3b;
     background-color: #ffffff;
     color: #353f54;
@@ -10,6 +10,9 @@ export const AuthBtn = styled(NavLink)`
     border-radius: 5px;
     text-transform: uppercase;
     transition: background-color 400ms, color 400ms;
+    @media (min-width: 780px) {
+        padding: 10px 20px;
+    }
     :not(:last-child) {
         margin-right: 25px;
     }

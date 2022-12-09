@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Spinner = styled.span`
-    width: 175px;
-    height: 80px;
+    width: 85px;
+    height: 40px;
     display: block;
     background-image: radial-gradient(
             circle 25px at 25px 25px,
@@ -20,7 +20,7 @@ export const Spinner = styled.span`
 
     ::before {
         content: '';
-        left: 60px;
+        left: 50px;
         bottom: 18px;
         position: absolute;
         width: 36px;
@@ -47,7 +47,7 @@ export const Spinner = styled.span`
     }
     ::after {
         content: '';
-        left: 94px;
+        left: 84px;
         bottom: 15px;
         position: absolute;
         width: 24px;

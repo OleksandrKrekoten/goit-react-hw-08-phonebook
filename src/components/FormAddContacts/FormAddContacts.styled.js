@@ -2,12 +2,20 @@ import { Form as FormikForm, Field as FormikInput } from 'formik';
 import styled from '@emotion/styled';
 
 export const Form = styled(FormikForm)`
-height: max-content;
-    width: 400px;
+    height: max-content;
+    flex: 1;
     flex-direction: column;
     background-color: #ffffff;
     border-radius: 5px;
     padding: 40px;
+    margin: 0 0 25px 0;
+    @media (min-width: 780px) {
+        width: 400px;
+    }
+    @media (min-width: 1200px) {
+        width: 400px;
+        margin: 0 25px 0 0;
+    }
     span {
         font-weight: 700;
         display: block;

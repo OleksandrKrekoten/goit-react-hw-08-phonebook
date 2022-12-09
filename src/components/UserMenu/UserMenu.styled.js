@@ -31,13 +31,16 @@ export const Menu = styled.div`
 `;
 export const MenuDiscription = styled.p`
     text-transform: uppercase;
-    font-size: 20px;
-    margin-right: 25px;
+    font-size: 10px;
+    margin:0 25px;
+    @media (min-width: 780px) {
+       font-size: 20px;
+    }
 `;
 
 export const LogoutBtn = styled.button`
-    display: block;
-      padding: 10px 20px;
+    display: flex;
+    padding: 5px 10px;
     border: 1px solid #242c3b;
     background-color: #ffffff;
     color: #353f54;
@@ -45,6 +48,7 @@ export const LogoutBtn = styled.button`
     border-radius: 5px;
     text-transform: uppercase;
     transition: background-color 400ms, color 400ms;
+    align-items: center;
     :not(:last-child) {
         margin-right: 25px;
     }
@@ -54,6 +58,13 @@ export const LogoutBtn = styled.button`
         box-shadow: 0px 25px 126px -11px rgba(255, 255, 255, 0.86);
     }
     span {
-        margin-right: 10px;
+        display: none;
+    }
+    @media (min-width: 780px) {
+        span {
+            display: flex;
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
     }
 `;

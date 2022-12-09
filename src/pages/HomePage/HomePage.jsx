@@ -1,10 +1,10 @@
-import { HeroSection, HeroDiscription } from './HomePage.styled';
+import { HeroSection, HeroDiscription, Img } from './HomePage.styled';
 
 export const HomePage = () => {
     return (
         <HeroSection>
             <div>
-                <img
+                <Img
                     src="https://ik.imagekit.io/dqs5dhaf3/how-to-restore-deleted-contacts-on-android-removebg-preview__1__6sUJfrgZe.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670074156287"
                     alt="phone "
                 />
@@ -18,7 +18,7 @@ export const HomePage = () => {
                     perspiciatis rerum adipisci neque. Debitis sequi laudantium
                     maiores.
                 </p>
-            </HeroDiscription   >
+            </HeroDiscription>
         </HeroSection>
     );
 };

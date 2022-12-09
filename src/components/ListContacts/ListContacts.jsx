@@ -1,5 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { List, Item, Name, DeleteBtn, Avatar } from './ListContact.styled';
+import {
+    List,
+    Item,
+    Name,
+    DeleteBtn,
+    Avatar,
+    PhoneNum,
+    Wrraper,
+} from './ListContact.styled';
 import { deleteContact } from 'redux/contacts/operations';
 import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 import { AvatarGenerator } from 'random-avatar-generator';
@@ -28,8 +36,10 @@ export const ListContacts = () => {
                                 src={generator.generateRandomAvatar(id)}
                                 alt=""
                             />
-                            <Name>{name}</Name>
-                            <p>{number}</p>
+                            <Wrraper>
+                                <Name>{name}</Name>
+                                <PhoneNum>{number}</PhoneNum>
+                            </Wrraper>
                         </div>
                         <DeleteBtn
                             id={id}
