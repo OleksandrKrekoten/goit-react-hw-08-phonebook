@@ -61,9 +61,10 @@ export const LogoutBtn = styled.button`
         display: none;
     }
     @media (min-width: 780px) {
+        padding: 10px 20px;
         span {
             display: flex;
-            padding: 10px 20px;
+
             margin-right: 10px;
         }
     }

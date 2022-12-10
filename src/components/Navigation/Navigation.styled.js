@@ -7,7 +7,7 @@ align-items: center;
 export const NavBtn = styled(NavLink)`
     display: flex;
     align-items: center;
-    padding: 5px 10px;
+    padding-right: 10px;
     border: 1px solid #242c3b;
     background-color: #ffffff;
     color: #353f54;
@@ -20,7 +20,6 @@ export const NavBtn = styled(NavLink)`
     }
     span {
         display: none;
-        margin-right: 10px;
     }
     :hover {
         color: #ffffff;
@@ -34,9 +33,9 @@ export const NavBtn = styled(NavLink)`
         box-shadow: inset 2px -1px 37px 7px rgba(0, 0, 0, 0.31);
     }
     @media (min-width: 780px) {
+        padding: 10px 20px;
         span {
-            padding: 10px 20px;
-            display: block;
+            display: inline;
             margin-right: 10px;
         }
     }
